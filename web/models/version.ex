@@ -1,5 +1,6 @@
 defmodule VersionWarehouse.Version do
   use VersionWarehouse.Web, :model
+  use Calecto.Model, usec: true
 
   schema "versions" do
     field :item_type, :string
@@ -11,7 +12,7 @@ defmodule VersionWarehouse.Version do
     field :request_id, :string
     field :admin_id, :integer
     field :object_changes, :string
-    field :created_at, Ecto.DateTime
+    field :created_at, Calecto.DateTimeUTC
 
     timestamps
   end

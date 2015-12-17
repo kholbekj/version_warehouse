@@ -19,7 +19,8 @@ defmodule VersionWarehouse.Web do
   def model do
     quote do
       use Ecto.Schema
-
+      use Ecto.Model, usec: true
+      
       import Ecto
       import Ecto.Changeset
       import Ecto.Query, only: [from: 1, from: 2]

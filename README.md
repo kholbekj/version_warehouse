@@ -1,5 +1,7 @@
 # VersionWarehouse
 
+### This service is made to offload main databases and applications from storing versions from the papertrail gem.
+
 To start the service:
 
   1. Install dependencies with `mix deps.get`
