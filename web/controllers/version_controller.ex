@@ -1,12 +1,18 @@
 defmodule VersionWarehouse.VersionController do
   use VersionWarehouse.Web, :controller
+  import Ecto.Query
 
   alias VersionWarehouse.Version
 
   plug :scrub_params, "version" when action in [:create, :update]
 
-  def index(conn, _params) do
-    versions = Repo.all(Version)
+  def index(conn, %{"item_type" => item_type, "item_id" => item_id}) do
+    versions =
+    Version
+    |> where([v], v.item_type == ^item_type)
+    |> where([v], v.item_id == ^item_id)
+    |> order_by([v], [v.created_at, v.id])
+    |> Repo.all
     render(conn, "index.json", versions: versions)
   end
 

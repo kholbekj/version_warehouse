@@ -11,12 +11,13 @@ defmodule VersionWarehouse.Version do
     field :request_id, :string
     field :admin_id, :integer
     field :object_changes, :string
+    field :created_at, Ecto.DateTime
 
     timestamps
   end
 
-  @required_fields ~w(item_type item_id event whodunnit object ip request_id admin_id object_changes)
-  @optional_fields ~w()
+  @required_fields ~w(item_type item_id event)
+  @optional_fields ~w(whodunnit object ip request_id admin_id object_changes created_at)
 
   @doc """
   Creates a changeset based on the `model` and `params`.

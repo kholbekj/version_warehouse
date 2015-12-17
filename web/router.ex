@@ -19,8 +19,9 @@ defmodule VersionWarehouse.Router do
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", VersionWarehouse do
-  #   pipe_through :api
-  # end
+  scope "/api", VersionWarehouse do
+    pipe_through :api
+
+    resources "/versions", VersionController, except: [:new, :edit]
+  end
 end
