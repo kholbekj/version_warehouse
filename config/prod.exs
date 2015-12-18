@@ -26,6 +26,10 @@ config :version_warehouse, VersionWarehouse.Repo,
   url: System.get_env("DATABASE_URL"),
   pool_size: 20
 
+  config :version_warehouse, :auth,
+    auth_token: System.get_env("AUTH_TOKEN")
+
+
 # ## SSL Support
 #
 # To get SSL working, you will need to add the `https` key

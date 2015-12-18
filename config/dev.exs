@@ -41,3 +41,6 @@ config :version_warehouse, VersionWarehouse.Repo,
   database: "version_warehouse_dev",
   hostname: "localhost",
   pool_size: 10
+
+config :version_warehouse, :auth,
+  auth_token: "AB12345"

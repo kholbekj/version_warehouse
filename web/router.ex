@@ -11,6 +11,7 @@ defmodule VersionWarehouse.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    plug VersionWarehouse.Plugs.Authenticate
   end
 
   scope "/", VersionWarehouse do
