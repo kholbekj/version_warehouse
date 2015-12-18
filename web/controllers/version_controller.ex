@@ -8,11 +8,11 @@ defmodule VersionWarehouse.VersionController do
 
   def index(conn, %{"item_type" => item_type, "item_id" => item_id}) do
     versions =
-    Version
-    |> where([v], v.item_type == ^item_type)
-    |> where([v], v.item_id == ^item_id)
-    |> order_by([v], [v.created_at, v.id])
-    |> Repo.all
+      Version
+      |> where([v], v.item_type == ^item_type)
+      |> where([v], v.item_id == ^item_id)
+      |> order_by([v], [v.created_at, v.id])
+      |> Repo.all
     render(conn, "index.json", versions: versions)
   end
 
