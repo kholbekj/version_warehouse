@@ -19,7 +19,7 @@ defmodule VersionWarehouse.Mixfile do
   def application do
     [mod: {VersionWarehouse, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex, :tzdata]]
   end
 
   # Specifies which paths to compile per environment.
