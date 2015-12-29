@@ -12,7 +12,7 @@ defmodule VersionWarehouse.Version do
     field :request_id, :string
     field :admin_id, :integer
     field :object_changes, :string
-    field :created_at, Calecto.DateTimeUTC
+    field :created_at, :string
 
     timestamps
   end

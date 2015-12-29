@@ -20,6 +20,6 @@ defmodule VersionWarehouse.VersionView do
       request_id: version.request_id,
       admin_id: version.admin_id,
       object_changes: version.object_changes,
-      created_at: Calendar.DateTime.Format.rfc2822(version.created_at)}
+      created_at: version.created_at}
   end
 end
