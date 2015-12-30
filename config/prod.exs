@@ -19,7 +19,7 @@ config :version_warehouse, VersionWarehouse.Endpoint,
   secret_key_base: System.get_env("SECRET_KEY_BASE")
 
 # Do not print debug messages in production
-config :logger, level: :info
+config :logger, level: :debug
 
 config :version_warehouse, VersionWarehouse.Repo,
   adapter: Ecto.Adapters.Postgres,
