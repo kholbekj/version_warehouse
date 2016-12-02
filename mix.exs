@@ -19,7 +19,7 @@ defmodule VersionWarehouse.Mixfile do
   def application do
     [mod: {VersionWarehouse, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :tzdata]]
+                    :phoenix_ecto, :postgrex, :tzdata, :honeybadger]]
   end
 
   # Specifies which paths to compile per environment.
@@ -37,7 +37,8 @@ defmodule VersionWarehouse.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.9"},
      {:cowboy, "~> 1.0"},
-     {:calecto, "~> 0.4.3"}]
+     {:calecto, "~> 0.4.3"},
+     {:honeybadger, "~> 0.1"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.

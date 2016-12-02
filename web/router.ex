@@ -1,5 +1,6 @@
 defmodule VersionWarehouse.Router do
   use VersionWarehouse.Web, :router
+  use Honeybadger.Plug
 
   pipeline :browser do
     plug :accepts, ["html"]
