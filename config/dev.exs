@@ -37,10 +37,14 @@ config :phoenix, :stacktrace_depth, 20
 config :version_warehouse, VersionWarehouse.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
-  password: "postgres",
+  password: "",
   database: "version_warehouse_dev",
-  hostname: "localhost",
-  pool_size: 10
+  hostname: "postgres",
+  pool_size: 10,
+  port: 5432
 
 config :version_warehouse, :auth,
   auth_token: "AB12345"
+
+config :honeybadger,
+  environment_name: :dev
