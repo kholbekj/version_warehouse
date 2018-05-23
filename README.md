@@ -12,6 +12,9 @@ OR use Docker
 
 ```
 docker-compose build
+docker-compose run --rm web mix deps.get
+docker-compose run --rm web mix ecto.create
+docker-compose run --rm web mix ecto.migrate
 docker-compose up
 ```
 

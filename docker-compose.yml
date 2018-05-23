@@ -26,6 +26,6 @@ services:
       - postgres
     volumes:
       - .:/version-warehouse
-    command: "mix deps.get && mix ecto.create && mix ecto.migrate"
+    command: "mix ecto.create && mix ecto.migrate"
 volumes:
   postgres:
