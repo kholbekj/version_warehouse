@@ -44,3 +44,6 @@ config :version_warehouse, VersionWarehouse.Repo,
 
 config :version_warehouse, :auth,
   auth_token: "AB12345"
+
+config :honeybadger,
+  environment_name: :dev
