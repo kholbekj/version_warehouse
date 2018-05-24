@@ -8,6 +8,16 @@ To start the service:
   2. Create and migrate your database with `mix ecto.create && mix ecto.migrate`
   3. Start Phoenix endpoint with `mix phoenix.server`
 
+OR use Docker
+
+```
+docker-compose build
+docker-compose run --rm web mix deps.get
+docker-compose run --rm web mix ecto.create
+docker-compose run --rm web mix ecto.migrate
+docker-compose up
+```
+
 Now you can query [`localhost:4000/api/versions`](http://localhost:4000/api/versions).
 
 You can post to `api/versions`. Require fields are `item_type`, `item_id`, and `event`.
