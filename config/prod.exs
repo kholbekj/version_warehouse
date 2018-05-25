@@ -24,7 +24,8 @@ config :logger, level: :debug
 config :version_warehouse, VersionWarehouse.Repo,
   adapter: Ecto.Adapters.Postgres,
   url: System.get_env("DATABASE_URL"),
-  pool_size: 20
+  pool_size: 20,
+  ssl: true
 
   config :version_warehouse, :auth,
     auth_token: System.get_env("AUTH_TOKEN")
