@@ -6,7 +6,7 @@ defmodule VersionWarehouse.Repo.Migrations.AddTrigramIndexToVersionsObject do
     execute("CREATE EXTENSION pg_trgm")
 
     execute("""
-    CREATE INDEX versions_trgm_idx ON versions USING GIN (to_tsvector('english',
+    CREATE INDEX CONCURRENTLY versions_trgm_idx ON versions USING GIN (to_tsvector('english',
       object))
     """)
   end
