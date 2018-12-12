@@ -12,5 +12,13 @@ defmodule VersionWarehouse.Repo.Migrations.AddVersionCreatedAtToVersions do
       WHERE version_created_at IS NULL
       AND created_at IS NOT NULL
     """
+
+    create index(:versions, :version_created_at, concurrently: true)
+
+    create index(
+      :versions,
+      [:item_type, :event, :version_created_at],
+      concurrently: true
+    )
   end
 end
