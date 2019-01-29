@@ -3,21 +3,15 @@ defmodule VersionWarehouse.Repo.Migrations.AddTrigramIndexToVersionsObject do
   @disable_ddl_transaction true
 
   def up do
-    execute("SET statement_timeout = 172800000")
+    execute('SET statement_timeout = 172800000')
     execute('DROP INDEX IF EXISTS versions_trgm_idx')
-    execute("CREATE EXTENSION IF NOT EXISTS pg_trgm")
-    
-    execute("""
-      CREATE INDEX CONCURRENTLY versions_trgm_idx
-      ON versions
-      USING GIN (to_tsvector('english', object))
-    """)
-
-    execute("SET statement_timeout = 0")
+    execute('CREATE EXTENSION IF NOT EXISTS pg_trgm')
+    execute("CREATE INDEX CONCURRENTLY versions_trgm_idx ON versions USING GIN (to_tsvector('english', object))")
+    execute('SET statement_timeout = 0')
   end
 
   def down do
     execute('DROP INDEX IF EXISTS versions_trgm_idx')
-    execute("DROP EXTENSION IF EXISTS pg_trgm")
+    execute('DROP EXTENSION IF EXISTS pg_trgm')
   end
 end
